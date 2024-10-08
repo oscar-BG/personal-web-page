@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
           </Col>
           <Col xs={12} sm={12} md={24} lg={24} xl={24}>
             <p className="subtitle">Correo: </p>
-            <a href={`mailto:oscar@gmail.com`}>
+            <a href={`mailto:oscar04262000@gmail.com`}>
               <Icon style={{ marginRight: '8px' }}> <CIcon icon={cilEnvelopeLetter} style={{ color: 'black' }} size="xxl"></CIcon> </Icon>
               Enviar correo
             </a>
