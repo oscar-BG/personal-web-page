@@ -1,4 +1,4 @@
-import { UserOutlined } from "@ant-design/icons";
+import { ToolOutlined } from "@ant-design/icons";
 import { Col, Divider } from "antd";
 
 const Technologies: React.FC = () => {
@@ -7,7 +7,7 @@ const Technologies: React.FC = () => {
             <div>
                 <Divider orientation="left">
                     <div style={{ display: "flex", alignItems: "center" }}>
-                        <UserOutlined style={{ marginRight: "8px" }} />{" "}
+                        <ToolOutlined style={{ marginRight: "8px" }} />{" "}
                         <h3>Tecnologías de Software</h3>
                     </div>
                 </Divider>

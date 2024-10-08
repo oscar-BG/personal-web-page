@@ -14,7 +14,9 @@ function App() {
     <>
       <NavBar />
       <Content style={{ marginTop: "20px", marginLeft: "30px" }}>
-            <h1>Programador Web Front-End y Back-End</h1>
+          <div>
+            <h1 className="primary-color">Programador Web Front-End y Back-End</h1>
+          </div>
         <Row>
           <Col xs={24} sm={24} md={12} lg={12} xl={12} >
 

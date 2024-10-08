@@ -9,8 +9,8 @@ const AboutMe: React.FC = () => {
                 <h3>Sobre mí</h3>
             </div>
         </Divider>
-        <p>
-            Desarrollador Web con experiencia en <strong>React JS</strong>,{" "}
+        <p className="text-content">
+            Desarrollador Web con experiencia en <strong>React JS</strong>,
             <strong>ASP.NET</strong>, <strong> PHP </strong>, y manejo de base
             de datos relacionales <strong>(MySql y PostgreSQL)</strong>.
             <br /> Con 2 años de experiencia en desarrollo de Software,
@@ -22,7 +22,7 @@ const AboutMe: React.FC = () => {
                 Laravel
             </strong>{" "}
             para mejorar mis habilidades y ampliar las herramientas con las
-            que trabajo. Elegí el framework Laravel por que PHP es uno de los
+            que trabajo. Elegí el framework Laravel porque PHP es uno de los
             lenguajes de programación con los que tengo más experiencia.
         </p>
     </>
