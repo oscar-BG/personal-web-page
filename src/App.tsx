@@ -1,9 +1,16 @@
 import {
   ArrowRightOutlined,
   GithubOutlined,
-  LinkedinOutlined,
-  MailOutlined,
+  LinkedinOutlined
 } from "@ant-design/icons";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, FreeMode } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
 
 const technologyIcon = (fileName: string) =>
   `${import.meta.env.BASE_URL}tecnologias/${fileName}`;
@@ -53,7 +60,7 @@ const codeLines = [
   "  role: 'Full Stack Developer',",
   "  location: 'Puebla, Mexico',",
   "  focus: [",
-  "    'Desarrollo Web',",
+  "    'Desarrollo de Software',",
   "    'APIs RESTful',",
   "    'Experiencia de Usuario',",
   "    'Buenas Practicas'",
@@ -105,8 +112,7 @@ function App() {
             Desarrollador Full Stack
           </h2>
           <p className="mt-8 max-w-xl text-lg leading-8 text-slate-400">
-            Desarrollo aplicaciones web modernas, mantenibles y enfocadas en
-            resolver necesidades reales de usuarios y clientes.
+            Desarrollador de software con 4 años de experiencia creando aplicaciones web y móviles. Me especializo en construir soluciones eficientes, escalables y fáciles de mantener utilizando tecnologías modernas.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
@@ -156,23 +162,43 @@ function App() {
       <section id="tecnologias" className="relative border-y border-white/10 bg-slate-950/40 px-5 py-14">
         <div className="mx-auto max-w-6xl">
           <SectionTitle title="Tecnologias" />
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
-            {technologies.map((technology) => (
-              <div
-                className="rounded-lg border border-slate-700/80 bg-[#07111f] p-5 text-center shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:border-blue-500"
-                key={technology.name}
-              >
-                <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-md bg-white/5 p-2">
-                  <img
-                    alt=""
-                    className="h-full w-full object-contain"
-                    loading="lazy"
-                    src={technology.icon}
-                  />
-                </div>
-                <p className="text-sm font-semibold text-slate-200">{technology.name}</p>
-              </div>
-            ))}
+          <div className="relative">
+            <Swiper
+              modules={[Autoplay, FreeMode]}
+              spaceBetween={20}
+              slidesPerView={2}
+              loop={true}
+              speed={1500}
+              freeMode={true}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+              }}
+              breakpoints={{
+                640: { slidesPerView: 3 },
+                768: { slidesPerView: 4 },
+                1024: { slidesPerView: 5 },
+              }}
+              className="tech-swiper"
+            >
+              {technologies.map((technology) => (
+                <SwiperSlide key={technology.name}>
+                  <div className="rounded-lg border border-slate-700/80 bg-[#07111f] p-5 text-center shadow-lg shadow-black/10 transition-all hover:border-blue-500">
+                    <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-md bg-white/5 p-2">
+                      <img
+                        alt=""
+                        className="h-full w-full object-contain"
+                        loading="lazy"
+                        src={technology.icon}
+                      />
+                    </div>
+                    <p className="text-sm font-semibold text-slate-200">
+                      {technology.name}
+                    </p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>
@@ -252,13 +278,6 @@ function App() {
             target="_blank"
           >
             <LinkedinOutlined />
-          </a>
-          <a
-            aria-label="Email"
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 text-xl text-white transition hover:border-blue-400 hover:text-blue-300"
-            href="mailto:oscar04262000@gmail.com"
-          >
-            <MailOutlined />
           </a>
         </div>
         <p className="mt-9 text-sm text-slate-500">
