@@ -34,25 +34,25 @@ const technologies = [
 
 const projects = [
   {
-    name: "FinanzApp",
-    type: "Web App",
+    name: "AdminCredit",
+    type: "Mobile App",
     description:
-      "Aplicacion para gestion de finanzas personales con analisis de gastos, presupuestos y reportes.",
-    stack: ["React", "TypeScript", "PostgreSQL"],
+      "Aplicación móvil para la gestión de tarjetas de crédito. puedes consultar saldos, movimientos, y fechas de corte. \n Actualmente en desarrollo.",
+    stack: ["Flutter", "SQLite"],
   },
   {
     name: "Refacciones App",
-    type: "Mobile API",
+    type: "Mobile App & Backend",
     description:
-      "Integracion de servicios, pagos y catalogos para una aplicacion movil de venta de refacciones.",
-    stack: ["PHP", "Flutter", "MySQL"],
+      "Aplicación móvil para la gestión y venta de refacciones automotrices, con funcionalidades para inventario, ventas y reportes. Incluye un backend en PHP para la administración de datos y procesos.",
+    stack: ["Slim Framework", "MySQL", "Cordova Apache", "Docker"],
   },
   {
-    name: "Admin APIs",
+    name: "API Medica",
     type: "Backend",
     description:
-      "APIs RESTful y paneles internos para procesos operativos, mantenimiento y consultas de datos.",
-    stack: ["Slim Framework", "Docker", "PostgreSQL"],
+      "APIs RESTful para la gestión de pacientes. Construida con NestJS y MySQL, diseñada para ser escalable y fácil de mantener.",
+    stack: ["NestJS", "MySQL"],
   },
 ];
 
