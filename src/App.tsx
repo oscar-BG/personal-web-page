@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   ArrowRightOutlined,
   GithubOutlined,
@@ -5,6 +6,7 @@ import {
 } from "@ant-design/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
+import Typewriter from "typewriter-effect";
 
 // Import Swiper styles
 import "swiper/css";
@@ -70,6 +72,8 @@ const codeLines = [
 ];
 
 function App() {
+  const [step, setStep] = useState(0);
+
   return (
     <main className="min-h-screen bg-[#020812] text-slate-100">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(37,99,235,0.18),transparent_28%),radial-gradient(circle_at_80%_25%,rgba(14,165,233,0.1),transparent_26%)]" />
@@ -104,12 +108,51 @@ function App() {
         className="relative mx-auto grid min-h-[calc(100vh-73px)] max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-[1fr_0.95fr]"
       >
         <div>
-          <p className="mb-4 text-lg font-semibold text-slate-300">Hola, soy</p>
-          <h1 className="max-w-3xl text-5xl font-black leading-tight text-white sm:text-6xl lg:text-7xl">
-            Oscar <span className="text-blue-400">Bautista</span>
+          <div className={`mb-4 text-lg font-semibold text-slate-300 ${step > 0 ? "hide-cursor" : ""}`}>
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("Hola, soy")
+                  .callFunction(() => setStep(1))
+                  .start();
+              }}
+              options={{
+                cursor: "|",
+                delay: 50,
+              }}
+            />
+          </div>
+          <h1 className={`max-w-3xl text-5xl font-black leading-tight text-white sm:text-6xl lg:text-7xl min-h-[1.2em] ${step > 1 ? "hide-cursor" : ""}`}>
+            {step >= 1 && (
+              <Typewriter
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString('Oscar <span class="text-blue-400">Bautista</span>')
+                    .callFunction(() => setStep(2))
+                    .start();
+                }}
+                options={{
+                  cursor: "|",
+                  delay: 70,
+                }}
+              />
+            )}
           </h1>
-          <h2 className="mt-4 text-2xl font-bold text-slate-300">
-            Desarrollador Full Stack
+          <h2 className={`mt-4 text-2xl font-bold text-slate-300 min-h-[1.5em] ${step > 2 ? "hide-cursor" : ""}`}>
+            {step >= 2 && (
+              <Typewriter
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString("Desarrollador Full Stack")
+                    .callFunction(() => setStep(3))
+                    .start();
+                }}
+                options={{
+                  cursor: "|",
+                  delay: 50,
+                }}
+              />
+            )}
           </h2>
           <p className="mt-8 max-w-xl text-lg leading-8 text-slate-400">
             Desarrollador de software con 4 años de experiencia creando aplicaciones web y móviles. Me especializo en construir soluciones eficientes, escalables y fáciles de mantener utilizando tecnologías modernas.

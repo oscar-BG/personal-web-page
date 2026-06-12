@@ -54,3 +54,7 @@ a {
 .tech-swiper .swiper-wrapper {
   transition-timing-function: linear !important;
 }
+
+.hide-cursor .Typewriter__cursor {
+  display: none !important;
+}
