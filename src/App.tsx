@@ -5,17 +5,22 @@ import {
   MailOutlined,
 } from "@ant-design/icons";
 
+const technologyIcon = (fileName: string) =>
+  `${import.meta.env.BASE_URL}tecnologias/${fileName}`;
+
 const technologies = [
-  "React",
-  "TypeScript",
-  "Vite",
-  "Tailwind CSS",
-  "ASP.NET",
-  "PHP",
-  "PostgreSQL",
-  "MySQL",
-  "Docker",
-  "Git",
+  { name: "React", icon: technologyIcon("react.png") },
+  { name: "TypeScript", icon: technologyIcon("typescript.png") },
+  { name: "Vite", icon: technologyIcon("vite.svg.png") },
+  { name: "Tailwind CSS", icon: technologyIcon("tailwind.png") },
+  { name: "PHP", icon: technologyIcon("php.png") },
+  { name: "Slim Framework", icon: technologyIcon("Slim.png") },
+  { name: "Flutter", icon: technologyIcon("flutter.png") },
+  { name: "PostgreSQL", icon: technologyIcon("Postgresql.svg") },
+  { name: "MySQL", icon: technologyIcon("mysql.png") },
+  { name: "Docker", icon: technologyIcon("docker.png") },
+  { name: "Git", icon: technologyIcon("Git.svg.png") },
+  { name: "Linux", icon: technologyIcon("linux.png") },
 ];
 
 const projects = [
@@ -38,7 +43,7 @@ const projects = [
     type: "Backend",
     description:
       "APIs RESTful y paneles internos para procesos operativos, mantenimiento y consultas de datos.",
-    stack: ["ASP.NET", "Docker", "PostgreSQL"],
+    stack: ["Slim Framework", "Docker", "PostgreSQL"],
   },
 ];
 
@@ -155,12 +160,17 @@ function App() {
             {technologies.map((technology) => (
               <div
                 className="rounded-lg border border-slate-700/80 bg-[#07111f] p-5 text-center shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:border-blue-500"
-                key={technology}
+                key={technology.name}
               >
-                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-md bg-blue-500/10 text-lg font-black text-blue-300">
-                  {technology.slice(0, 2)}
+                <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-md bg-white/5 p-2">
+                  <img
+                    alt=""
+                    className="h-full w-full object-contain"
+                    loading="lazy"
+                    src={technology.icon}
+                  />
                 </div>
-                <p className="text-sm font-semibold text-slate-200">{technology}</p>
+                <p className="text-sm font-semibold text-slate-200">{technology.name}</p>
               </div>
             ))}
           </div>
