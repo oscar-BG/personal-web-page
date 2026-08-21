@@ -1,6 +1,9 @@
 export const technologyIcon = (fileName: string) =>
   `${import.meta.env.BASE_URL}tecnologias/${fileName}`;
 
+export const certificateFile = (fileName: string) =>
+  `${import.meta.env.BASE_URL}certificados/${fileName}`;
+
 export const technologies = [
   { name: "React", icon: technologyIcon("react.png") },
   { name: "TypeScript", icon: technologyIcon("typescript.png") },
@@ -14,6 +17,16 @@ export const technologies = [
   { name: "Docker", icon: technologyIcon("docker.png") },
   { name: "Git", icon: technologyIcon("Git.svg.png") },
   { name: "Linux", icon: technologyIcon("linux.png") },
+];
+
+export const certificates = [
+  {
+    name: "Docker",
+    issuer: "Udemy",
+    image: certificateFile("Udemy - Docker.jpg"),
+    url: "https://www.udemy.com/certificate/UC-23b8f63e-739d-4f84-ab1e-468e54becea0/",
+    fileName: "Udemy - Docker.jpg",
+  },
 ];
 
 export interface Project {

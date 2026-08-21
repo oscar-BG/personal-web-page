@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRightOutlined,
+  DownloadOutlined,
+  EyeOutlined,
   GithubOutlined,
   LinkedinOutlined
 } from "@ant-design/icons";
@@ -9,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import Typewriter from "typewriter-effect";
 
-import { technologies, projects, codeLines } from "../data";
+import { technologies, projects, codeLines, certificates } from "../data";
 
 // Import Swiper styles
 import "swiper/css";
@@ -36,6 +38,9 @@ export default function Home() {
             </a>
             <a className="transition hover:text-white" href="#tecnologias">
               Tecnologias
+            </a>
+            <a className="transition hover:text-white" href="#certificados">
+              Certificados
             </a>
             <a
               className="rounded-full border border-blue-500 px-5 py-2 text-blue-300 transition hover:bg-blue-500 hover:text-white"
@@ -186,6 +191,59 @@ export default function Home() {
                 </SwiperSlide>
               ))}
             </Swiper>
+          </div>
+        </div>
+      </section>
+
+      <section id="certificados" className="relative px-5 py-16">
+        <div className="mx-auto max-w-6xl">
+          <SectionTitle title="Certificados" />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {certificates.map((certificate) => (
+              <article
+                className="overflow-hidden rounded-lg border border-slate-700/80 bg-[#07111f] shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-blue-500"
+                key={certificate.name}
+              >
+                <a
+                  href={certificate.image}
+                  rel="noreferrer"
+                  target="_blank"
+                  className="block aspect-[4/3] border-b border-slate-700/80 bg-slate-950"
+                >
+                  <img
+                    alt={`Certificado ${certificate.name}`}
+                    className="h-full w-full object-cover object-top"
+                    loading="lazy"
+                    src={certificate.image}
+                  />
+                </a>
+                <div className="p-5">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-blue-300">
+                    {certificate.issuer}
+                  </p>
+                  <h3 className="mt-2 text-xl font-bold text-white">
+                    {certificate.name}
+                  </h3>
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <a
+                      href={certificate.url}
+                      rel="noreferrer"
+                      target="_blank"
+                      className="inline-flex items-center gap-2 rounded-md border border-slate-600 px-4 py-2 text-sm font-bold text-white transition hover:border-blue-400 hover:text-blue-300"
+                    >
+                      <EyeOutlined /> Ver
+                    </a>
+                    <a
+                      download={certificate.fileName}
+                      href={certificate.image}
+                      className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-blue-500"
+                    >
+                      <DownloadOutlined /> Descargar
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
