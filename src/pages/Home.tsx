@@ -261,15 +261,26 @@ export default function Home() {
                 }`}
                 key={project.id}
               >
-                <div className="mb-5 aspect-video rounded-md border border-slate-700 bg-gradient-to-br from-slate-200 to-slate-400 p-3">
-                  <div className="h-full rounded bg-white/80 p-3">
-                    <div className="mb-3 h-3 w-2/5 rounded bg-slate-500/30" />
-                    <div className="grid h-[calc(100%-1.5rem)] grid-cols-3 gap-2">
-                      <span className="rounded bg-blue-500/20" />
-                      <span className="rounded bg-slate-500/20" />
-                      <span className="rounded bg-slate-500/20" />
+                <div className="mb-5 aspect-video overflow-hidden rounded-md border border-slate-700 bg-gradient-to-br from-slate-200 to-slate-400">
+                  {project.coverImage ? (
+                    <img
+                      alt={`Portada de ${project.name}`}
+                      className="h-full w-full object-cover object-top"
+                      loading="lazy"
+                      src={`${import.meta.env.BASE_URL}${project.coverImage}`}
+                    />
+                  ) : (
+                    <div className="h-full p-3">
+                      <div className="h-full rounded bg-white/80 p-3">
+                        <div className="mb-3 h-3 w-2/5 rounded bg-slate-500/30" />
+                        <div className="grid h-[calc(100%-1.5rem)] grid-cols-3 gap-2">
+                          <span className="rounded bg-blue-500/20" />
+                          <span className="rounded bg-slate-500/20" />
+                          <span className="rounded bg-slate-500/20" />
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
                 <div className="mb-2 flex items-center justify-between gap-3">
                   <h3 className="text-xl font-bold text-white">{project.name}</h3>

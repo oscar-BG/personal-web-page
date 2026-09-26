@@ -27,6 +27,13 @@ export const certificates = [
     url: "https://www.udemy.com/certificate/UC-23b8f63e-739d-4f84-ab1e-468e54becea0/",
     fileName: "Udemy - Docker.jpg",
   },
+  {
+    name: "Master en Codex: Crea apps con IA Gratuita, Agentes y OpenAI",
+    issuer: "Udemy",
+    image: certificateFile("Udemy codex.jpg"),
+    url: "https://www.udemy.com/certificate/UC-23b8f63e-739d-4f84-ab1e-468e54becea0/",
+    fileName: "Udemy codex.jpg",
+  },
 ];
 
 export interface Project {
@@ -39,6 +46,7 @@ export interface Project {
   responsibilities?: string[];
   stack: string[];
   company?: string;
+  coverImage?: string;
   screenshots?: string[];
 }
 
@@ -64,6 +72,79 @@ export const projects: Project[] = [
       "proyectos/credit_admin/transacciones_recientes.jpeg",
       "proyectos/credit_admin/card_details.jpeg",
       "proyectos/credit_admin/Add_expense.jpeg"
+    ]
+  },
+  {
+    id: "mipos",
+    name: "MiPOS",
+    category: "Personal",
+    type: "Desktop App & Backend",
+    description:
+      "Sistema de punto de venta e inventario para pequeños y medianos comercios, diseñado para operar incluso cuando no hay conexión a Internet.",
+    longDescription:
+      "MiPOS es un sistema de punto de venta orientado a comercios con venta directa al público. Centraliza ventas, caja, productos, inventario, compras, proveedores, clientes, sucursales, usuarios, permisos y reportes.\n\nSu arquitectura está planteada con un enfoque offline-first: la aplicación de escritorio puede continuar registrando operaciones en una base de datos local y mantenerlas en una cola de sincronización hasta recuperar la conexión con la API central. El diseño también contempla operación multiempresa y multisucursal, trazabilidad de inventario, sesiones de caja e integración con hardware comercial.",
+    responsibilities: [
+      "Diseño de una experiencia de venta rápida, compatible con teclado y lectores de códigos de barras.",
+      "Modelado de ventas, pagos, sesiones de caja, compras y movimientos de inventario con trazabilidad.",
+      "Definición de una arquitectura offline-first con almacenamiento local, cola de sincronización y API REST central.",
+      "Diseño de módulos para productos, inventario, clientes, proveedores, sucursales, usuarios, permisos y reportes.",
+      "Planeación de integraciones con impresora térmica, cajón de dinero, báscula y otros dispositivos comerciales."
+    ],
+    stack: [
+      "PHP 8.3",
+      "Laravel 13",
+      "MySQL",
+      "Blade",
+      "JavaScript",
+      "Bootstrap",
+      "REST API",
+      "Eloquent ORM",
+      "Laravel Sanctum",
+      "Docker",
+      "Git",
+      "Linux"
+    ],
+    coverImage: "proyectos/puntodeventa/panel.png",
+    screenshots: [
+      "proyectos/puntodeventa/panel.png",
+      "proyectos/puntodeventa/apariencia.png"
+    ]
+  },
+  {
+    id: "sistema-gimnasios",
+    name: "Sistema Integral para Gimnasios",
+    category: "Personal",
+    type: "Web App & Backend",
+    description:
+      "Sistema administrativo para centralizar socios, membresías, pagos, accesos, clases, ventas y operación multisucursal de gimnasios.",
+    longDescription:
+      "Sistema Integral para Gimnasios es una solución administrativa modular para gimnasios y centros deportivos. Está diseñada para centralizar la gestión de socios, planes y membresías, pagos, asistencias, accesos, clases, instructores, productos, ventas, caja, usuarios, permisos, sucursales y reportes.\n\nEl modelo contempla validación de vigencia y restricciones al registrar accesos, historial completo por socio, renovación de membresías, programación de clases y seguimiento de indicadores operativos. Su arquitectura multiempresa y multisucursal permite adaptar horarios, clases, cajas, usuarios, productos y reglas de acceso a cada sede.",
+    responsibilities: [
+      "Diseño del expediente de socios con membresías, pagos, asistencias, accesos, clases y compras.",
+      "Modelado de planes, vigencias, renovaciones y estados de membresía.",
+      "Definición del flujo de control de acceso con validación de estatus, vigencia y restricciones.",
+      "Diseño de módulos para clases, instructores, venta de productos, caja, sucursales y reportes.",
+      "Implementación conceptual de roles y permisos para administración, recepción, gerencia, entrenadores y caja."
+    ],
+    stack: [
+      "PHP 8.3",
+      "Laravel 13",
+      "MySQL",
+      "Blade",
+      "JavaScript",
+      "Bootstrap",
+      "Eloquent ORM",
+      "Laravel Sanctum",
+      "Docker",
+      "Git",
+      "Linux"
+    ],
+    coverImage: "proyectos/gym/panel.png",
+    screenshots: [
+      "proyectos/gym/home.png",
+      "proyectos/gym/panel.png",
+      "proyectos/gym/metricas.png",
+      "proyectos/gym/venta.png"
     ]
   },
   {
